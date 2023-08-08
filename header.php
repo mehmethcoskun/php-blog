@@ -15,6 +15,7 @@ require_once './db.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>X Blog</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -53,6 +54,14 @@ require_once './db.php';
 
                 <ul class="navbar-nav">
                     <?php if (isset($_SESSION['uyelik']) && !empty($_SESSION['uyelik'])) : ?>
+                        <?php if ($_SESSION['uyelik']['admin'] == 1) : ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="admin/">Yönetim Paneli</a>
+                            </li>
+                        <?php endif; ?>
+                        <li class="nav-item">
+                            <a class="btn btn-primary" href="yeniBlog.php">Blog Ekle</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="profilim.php">Profilim</a>
                         </li>
