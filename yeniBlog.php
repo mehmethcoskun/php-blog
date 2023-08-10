@@ -9,7 +9,7 @@ $kategoriler = $db->query("SELECT * FROM kategoriler ORDER BY baslik ASC", PDO::
 <div class="container py-5">
     <div class="d-flex align-items-center justify-content-center">
         <div class="card w-75">
-            <form action="post.php" method="POST" enctype="multipart/form-data" class="card-body p-5">
+            <form action="post.php" id="formBlogEkle" method="POST" enctype="multipart/form-data" class="card-body p-5">
                 <input type="hidden" name="type" value="yeniBlog">
                 <div class="mb-5">
                     <h3>Yeni Blog Yazısı Oluştur</h3>
@@ -31,7 +31,10 @@ $kategoriler = $db->query("SELECT * FROM kategoriler ORDER BY baslik ASC", PDO::
                     </select>
                 </div>
                 <div class="mb-3">
-                    <div id="summernote"></div>
+                    <textarea id="summernote" name="icerik"></textarea>
+                </div>
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-primary btn-lg px-5">Kaydet</button>
                 </div>
             </form>
         </div>
